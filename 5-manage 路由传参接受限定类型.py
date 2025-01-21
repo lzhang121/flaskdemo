@@ -22,10 +22,14 @@ def index():
     return "<h1>hello world</h1>"
 
 
-@app.route("/good/<cid>/<gid>")
+@app.route("/good/<int:cid>/<int:gid>/<float:tid>/<uuid:uuid>")
 # 路由传参
-def good(cid, gid):
-    return f"显示cid={cid}, gid={gid}的商品信息"
+def good(cid, gid, tid, uuid):
+    print("type(cid): {}, cid: {}".format(type(cid), cid))
+    print("type(gid): {}, gid: {}".format(type(gid), gid))
+    print("type(tid): {}, tid: {}".format(type(tid), tid))
+    print("type(uuid): {}, uuid: {}".format(type(uuid), uuid))
+    return f"显示cid={cid}, gid={gid}的商品信息tid={tid} \n uuid={uuid}"
 
 
 if __name__ == '__main__':
