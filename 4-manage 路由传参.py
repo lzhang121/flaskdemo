@@ -22,10 +22,10 @@ def index():
     return "<h1>hello world</h1>"
 
 
-@app.route("/good/<cid>/<gid>")
+@app.route("/good/<id>")
 # 路由传参
-def good(cid, gid):
-    return f"显示cid={cid}, gid={gid}的商品信息"
+def good(id):
+    return f"显示id={id}的商品信息"
 
 
 if __name__ == '__main__':
