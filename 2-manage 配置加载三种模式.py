@@ -17,12 +17,19 @@ app = Flask(__name__)
 
 # 第二种：flask加载配置模式
 # app.config是整个flask项目配置属性
-config = {
-    "DEBUG": True
-}
-app.config.update(config)
+# config = {
+#     "DEBUG": True
+# }
+# app.config.update(config)
+
+# 第三种
 
 
+class Config(object):
+    DEBUG = True
+
+
+app.config.from_object(Config)
 # 通过实例对象app提供的route路由装饰器，绑定视图与uri地址的关系
 
 
