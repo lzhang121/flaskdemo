@@ -17,9 +17,13 @@ config = {
 app.config.update(config)
 
 
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
+@app.route('/hay')
+def index():
+    return render_template('hello.html', person=None)
+
+
+@app.route('/hay/<name>')
+def hello(name):
     return render_template('hello.html', person=name)
 
 

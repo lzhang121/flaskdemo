@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Static Example</title>
+    <!-- 引入静态 CSS 文件 -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Welcome to Flask Static Files Example</h1>
+    <p>This is a demo for serving static files in Flask.</p>
+
+    <!-- 引入静态 JS 文件 -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- 引入静态图片 -->
+    <img
+      src="{{ url_for('static', filename='images/flask-logo.png') }}"
+      alt="Flask Logo"
+    />
+  </body>
+</html>
