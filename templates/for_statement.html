@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{title}}</title>
+    <style>
+      .table {
+        border: 1px solid red;
+        border-collapse: collapse;
+        width: 800px;
+      }
+      .table tr th,
+      .table tr td {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="table">
+      <tr>
+        <th>序号</th>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>DESCRIPTION</th>
+        <th>LEVEL</th>
+      </tr>
+      {% for book in book_list |reverse %} {% if loop.first or loop.last %}
+      <tr bgcolor="aqua">
+        {% else %}
+      </tr>
+
+      <tr bgcolor="#faebd7">
+        {% endif %}
+        <td>
+          {{loop.index}} {{loop.index0}} {{loop.revindex}} {{loop.revindex0}}
+        </td>
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.description}}</td>
+        <td>{{loop.cycle("A","B","C")}}, 原始值={{book.level}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

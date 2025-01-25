@@ -5,9 +5,43 @@
     <title>{{title}}</title>
   </head>
   <body>
-    <h1>{{title}}</h1>
-    <br />
     <h1>{{content}}</h1>
+    <p>
+      简单数据类型:<br />
+      {{num}}<br />
+      {{num2}}<br />
+      {{is_bool}}<br />
+    </p>
+    <p>
+      复杂数据类型：<br />
+      {{set_var}}<br />
+      {{set_var.pop()}}<br />
+      {{list_var}}<br />
+      {{list_var.0}}<br />
+      {{list_var[-1]}}<br />
+      {{dict_var}}<br />
+      {{dict_var["name"]}}<br />
+      {{dict_var.name}}<br />
+      {{tuple_var}}<br />
+      {{tuple_var.0}}<br />
+    </p>
+    <p>
+      数据结构:<br />
+      {{book_list}}<br />
+      {{book_list.2}}<br />
+      {{book_list.2.title.upper()}}<br />
+    </p>
+    <p>
+      内置全局变量:<br />
+      {{request}}<br />
+      {{request.path}}<br />
+      {{request.method}}<br />
+      {{session.get("uname")}}<br />
+      {{g.get("num")}}<br />
+    </p>
+    <p>{{config}}</p>
+    <p>{{url_for("user1",userid=3)}}</p>
+    <p>{{url_for("user2",userid=4)}}</p>
     <br />
   </body>
 </html>

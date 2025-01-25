@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>{{content}}</h1>
+    <p>
+      if语句控制: <br />
+      {% set score_value=request.args.get("score") or 0 %}
+      {% if score_value|int > 100 or score_value|int < 0 %}
+        <p>输入成绩非法！！</p>
+      {% elif  score_value|int > 89%}
+        <p>该生学习: A</p>
+      {% elif  score_value|int > 79%}
+        <p>该生学习: B+</p>
+      {% elif  score_value|int > 69%}
+        <p>该生学习: B</p>
+      {% elif  score_value|int > 59%}
+        <p>该生学习: C</p>
+      {% elif  score_value|int >= 0%}
+        <p>该生学习: D</p>
+      {% else %}
+        <p>未找到该生学习成绩！！</p>
+      {% endif %}
+    </p>
+    <br />
+  </body>
+</html>

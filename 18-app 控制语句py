@@ -1,0 +1,39 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+@Name:        manage.py
+@Describe:    XXX
+@Time:        2025/01/21 15:37:37
+@Author:      Ray
+@Version:     1.0
+"""
+from flask import Flask, render_template, request, session, g
+
+app = Flask(__name__)
+config = {
+    "DEBUG": True,
+    "SECRET_KEY": "db05d70b-c3e2-43eb-af69-c7efa080af1e"
+}
+app.config.update(config)
+
+
+@app.route('/')
+def index():
+    book_list = [
+        {"id": 1, "title": "story", "description": "book", "level": 1},
+        {"id": 2, "title": "history", "description": "work", "level": 2},
+        {"id": 3, "title": "math", "description": "job", "level": 1},
+        {"id": 4, "title": "science", "description": "parttime", "level": 2},
+        {"id": 5, "title": "technic", "description": "full", "level": 2},
+        {"id": 6, "title": "literature", "description": "feeling", "level": 3},
+        {"id": 7, "title": "consume", "description": "flower", "level": 1},
+        {"id": 8, "title": "science", "description": "parttime", "level": 3},
+        {"id": 9, "title": "technic", "description": "full", "level": 2},
+        {"id": 10, "title": "literature", "description": "feeling", "level": 1}
+    ]
+    # return render_template("if_statement.html", **locals())
+    return render_template("for_statement.html", **locals())
+
+
+if '__main__':
+    app.run(host="0.0.0.0", port=5050)
