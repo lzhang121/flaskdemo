@@ -1,0 +1,20 @@
+{
+	"html": {
+		"prefix": "h", // 触发的关键字 输入vh按下tab键
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"en\">",
+			"<head>",
+			"  <meta charset=\"UTF-8\">",
+			"  <title>Document</title>",
+			"</head>",
+			"<body>",
+			"  <script>",
+			"    $1",
+			"  </script>",
+			"</body>",
+			"</html>",
+		],
+		"description": "html components"
+	}
+}
